@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 900" width="1000" height="900" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <rect width="1000" height="900" fill="#ffffff"/>
+  <text x="500" y="48" text-anchor="middle" font-size="30" font-weight="700" fill="#0f172a">Architecture of UNIX Operating System</text>
+
+  <!-- UNIX logo badge (top-right corner) -->
+  <g id="logo">
+    <rect x="852" y="14" width="118" height="50" rx="8" fill="#0f172a"/>
+    <rect x="856" y="18" width="110" height="42" rx="6" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="911" y="50" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" letter-spacing="3" fill="#ffffff">UNIX</text>
+  </g>
+
+  <!-- Layer labels (left) -->
+  <g font-size="13" font-weight="600" fill="#64748b" text-anchor="middle">
+    <text transform="translate(40,230) rotate(-90)">USER SPACE</text>
+    <text transform="translate(40,600) rotate(-90)">KERNEL SPACE</text>
+  </g>
+  <line x1="60" y1="408" x2="960" y2="408" stroke="#94a3b8" stroke-dasharray="6 5"/>
+
+  <!-- Layers are grouped L1 (bottom) .. L7 (top) so the GIF builder can reveal them in order -->
+
+  <g id="L7"><!-- Users -->
+    <rect x="80" y="80" width="860" height="60" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+    <text x="510" y="108" text-anchor="middle" font-size="20" font-weight="700" fill="#075985">Users</text>
+    <text x="510" y="129" text-anchor="middle" font-size="14" fill="#0369a1">Interact via terminal / GUI</text>
+    <line x1="510" y1="143" x2="510" y2="162" stroke="#475569" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  </g>
+
+  <g id="L6"><!-- Applications & Utilities -->
+    <rect x="80" y="165" width="860" height="105" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="510" y="190" text-anchor="middle" font-size="20" font-weight="700" fill="#166534">Application Programs &amp; Utilities</text>
+    <g font-size="14" fill="#14532d" text-anchor="middle">
+      <rect x="105" y="205" width="125" height="45" rx="6" fill="#ffffff" stroke="#86efac"/><text x="167" y="233">ls, cp, mv, cat</text>
+      <rect x="245" y="205" width="125" height="45" rx="6" fill="#ffffff" stroke="#86efac"/><text x="307" y="233">vi / nano</text>
+      <rect x="385" y="205" width="125" height="45" rx="6" fill="#ffffff" stroke="#86efac"/><text x="447" y="233">grep, awk, sed</text>
+      <rect x="525" y="205" width="125" height="45" rx="6" fill="#ffffff" stroke="#86efac"/><text x="587" y="233">cc / gcc, make</text>
+      <rect x="665" y="205" width="125" height="45" rx="6" fill="#ffffff" stroke="#86efac"/><text x="727" y="233">DBMS, servers</text>
+      <rect x="805" y="205" width="115" height="45" rx="6" fill="#ffffff" stroke="#86efac"/><text x="862" y="233">user apps</text>
+    </g>
+    <line x1="510" y1="273" x2="510" y2="292" stroke="#475569" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  </g>
+
+  <g id="L5"><!-- Shell -->
+    <rect x="80" y="295" width="860" height="90" rx="10" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+    <text x="510" y="322" text-anchor="middle" font-size="20" font-weight="700" fill="#854d0e">Shell (Command Interpreter)</text>
+    <text x="510" y="345" text-anchor="middle" font-size="14" fill="#713f12">sh · bash · csh · ksh · zsh</text>
+    <text x="510" y="367" text-anchor="middle" font-size="13" fill="#a16207">Reads commands, expands wildcards, runs programs, scripts, pipes &amp; redirection</text>
+    <line x1="510" y1="388" x2="510" y2="427" stroke="#475569" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  </g>
+
+  <g id="L4"><!-- System Call Interface -->
+    <rect x="80" y="430" width="860" height="60" rx="10" fill="#fce7f3" stroke="#db2777" stroke-width="2"/>
+    <text x="510" y="457" text-anchor="middle" font-size="20" font-weight="700" fill="#9d174d">System Call Interface</text>
+    <text x="510" y="478" text-anchor="middle" font-size="14" fill="#9d174d">fork() · exec() · open() · read() · write() · close() · wait() · kill() · pipe()</text>
+    <line x1="510" y1="493" x2="510" y2="507" stroke="#475569" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  </g>
+
+  <g id="L3"><!-- Kernel -->
+    <rect x="80" y="510" width="860" height="230" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+    <text x="510" y="537" text-anchor="middle" font-size="20" font-weight="700" fill="#5b21b6">Kernel</text>
+    <g font-size="14" text-anchor="middle">
+      <rect x="100" y="555" width="400" height="165" rx="8" fill="#ffffff" stroke="#a78bfa"/>
+      <text x="300" y="578" font-size="16" font-weight="700" fill="#4c1d95">Process Control Subsystem</text>
+      <rect x="115" y="592" width="180" height="50" rx="6" fill="#f5f3ff" stroke="#c4b5fd"/>
+      <text x="205" y="614" fill="#4c1d95" font-weight="600">Process Scheduler</text>
+      <text x="205" y="632" fill="#6d28d9" font-size="12">CPU time sharing</text>
+      <rect x="305" y="592" width="180" height="50" rx="6" fill="#f5f3ff" stroke="#c4b5fd"/>
+      <text x="395" y="614" fill="#4c1d95" font-weight="600">Memory Management</text>
+      <text x="395" y="632" fill="#6d28d9" font-size="12">swapping / paging</text>
+      <rect x="115" y="655" width="370" height="50" rx="6" fill="#f5f3ff" stroke="#c4b5fd"/>
+      <text x="300" y="677" fill="#4c1d95" font-weight="600">Inter-Process Communication (IPC)</text>
+      <text x="300" y="695" fill="#6d28d9" font-size="12">pipes · signals · shared memory · semaphores · sockets</text>
+
+      <rect x="520" y="555" width="400" height="165" rx="8" fill="#ffffff" stroke="#a78bfa"/>
+      <text x="720" y="578" font-size="16" font-weight="700" fill="#4c1d95">File Subsystem</text>
+      <rect x="535" y="592" width="370" height="50" rx="6" fill="#f5f3ff" stroke="#c4b5fd"/>
+      <text x="720" y="614" fill="#4c1d95" font-weight="600">File System</text>
+      <text x="720" y="632" fill="#6d28d9" font-size="12">inodes · directories · permissions</text>
+      <rect x="535" y="655" width="180" height="50" rx="6" fill="#f5f3ff" stroke="#c4b5fd"/>
+      <text x="625" y="677" fill="#4c1d95" font-weight="600">Buffer Cache</text>
+      <text x="625" y="695" fill="#6d28d9" font-size="12">block I/O</text>
+      <rect x="725" y="655" width="180" height="50" rx="6" fill="#f5f3ff" stroke="#c4b5fd"/>
+      <text x="815" y="677" fill="#4c1d95" font-weight="600">Device Drivers</text>
+      <text x="815" y="695" fill="#6d28d9" font-size="12">character · block</text>
+    </g>
+    <line x1="500" y1="617" x2="520" y2="617" stroke="#7c3aed" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <line x1="510" y1="743" x2="510" y2="757" stroke="#475569" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  </g>
+
+  <g id="L2"><!-- Hardware control -->
+    <rect x="80" y="760" width="860" height="40" rx="8" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+    <text x="510" y="786" text-anchor="middle" font-size="16" font-weight="700" fill="#9a3412">Hardware Control (interrupts &amp; machine communication)</text>
+    <line x1="510" y1="803" x2="510" y2="817" stroke="#475569" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  </g>
+
+  <g id="L1"><!-- Hardware -->
+    <rect x="80" y="820" width="860" height="60" rx="10" fill="#e2e8f0" stroke="#334155" stroke-width="2"/>
+    <text x="510" y="847" text-anchor="middle" font-size="20" font-weight="700" fill="#1e293b">Hardware</text>
+    <text x="510" y="868" text-anchor="middle" font-size="14" fill="#334155">CPU · RAM · Disk · Terminals · Network · I/O Devices</text>
+  </g>
+</svg>
