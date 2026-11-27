@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="900" height="480" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="900" height="480" fill="#ffffff"/>
+  <text x="450" y="44" text-anchor="middle" font-size="26" font-weight="700" fill="#0f172a">Reading a Permission String: -rwxr-xr--</text>
+
+  <!-- Characters -->
+  <g font-family="Consolas, monospace" font-size="40" font-weight="700" text-anchor="middle">
+    <rect x="90" y="80" width="70" height="70" rx="8" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/>
+    <text x="125" y="130" fill="#0f172a">-</text>
+
+    <rect x="180" y="80" width="200" height="70" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="223" y="130" fill="#166534">r</text><text x="280" y="130" fill="#166534">w</text><text x="337" y="130" fill="#166534">x</text>
+
+    <rect x="400" y="80" width="200" height="70" rx="8" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+    <text x="443" y="130" fill="#075985">r</text><text x="500" y="130" fill="#94a3b8">-</text><text x="557" y="130" fill="#075985">x</text>
+
+    <rect x="620" y="80" width="200" height="70" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+    <text x="663" y="130" fill="#92400e">r</text><text x="720" y="130" fill="#94a3b8">-</text><text x="777" y="130" fill="#94a3b8">-</text>
+  </g>
+
+  <!-- Labels -->
+  <g text-anchor="middle">
+    <text x="125" y="180" font-size="16" font-weight="700" fill="#0f172a">Type</text>
+    <text x="125" y="200" font-size="12.5" fill="#475569">- file, d dir,</text>
+    <text x="125" y="216" font-size="12.5" fill="#475569">l link</text>
+    <text x="280" y="180" font-size="16" font-weight="700" fill="#166534">User (owner)</text>
+    <text x="500" y="180" font-size="16" font-weight="700" fill="#075985">Group</text>
+    <text x="720" y="180" font-size="16" font-weight="700" fill="#92400e">Others</text>
+  </g>
+
+  <!-- Bit values -->
+  <g font-family="Consolas, monospace" font-size="15" text-anchor="middle" fill="#0f172a">
+    <text x="280" y="210">4 + 2 + 1</text>
+    <text x="500" y="210">4 + 0 + 1</text>
+    <text x="720" y="210">4 + 0 + 0</text>
+  </g>
+
+  <!-- Octal digits -->
+  <g font-family="Consolas, monospace" font-size="44" font-weight="700" text-anchor="middle">
+    <circle cx="280" cy="265" r="34" fill="#16a34a"/><text x="280" y="281" fill="#ffffff">7</text>
+    <circle cx="500" cy="265" r="34" fill="#0284c7"/><text x="500" y="281" fill="#ffffff">5</text>
+    <circle cx="720" cy="265" r="34" fill="#d97706"/><text x="720" y="281" fill="#ffffff">4</text>
+  </g>
+  <text x="450" y="335" text-anchor="middle" font-size="20" fill="#0f172a">Octal mode = <tspan font-family="Consolas, monospace" font-weight="700" fill="#16a34a">754</tspan>   so   <tspan font-family="Consolas, monospace" font-weight="700" fill="#16a34a">chmod 754 deploy.sh</tspan></text>
+
+  <!-- Legend -->
+  <rect x="90" y="365" width="730" height="90" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <g font-size="14" fill="#0f172a">
+    <text x="115" y="395"><tspan font-family="Consolas, monospace" font-weight="700">r = 4</tspan>  read: view file / list directory</text>
+    <text x="115" y="420"><tspan font-family="Consolas, monospace" font-weight="700">w = 2</tspan>  write: change file / create, delete entries in directory</text>
+    <text x="115" y="445"><tspan font-family="Consolas, monospace" font-weight="700">x = 1</tspan>  execute: run file / cd into directory     <tspan font-family="Consolas, monospace" font-weight="700">- = 0</tspan>  no permission</text>
+  </g>
+</svg>

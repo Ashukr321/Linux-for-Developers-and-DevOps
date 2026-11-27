@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect width="900" height="400" fill="#ffffff"/>
+  <text x="450" y="44" text-anchor="middle" font-size="26" font-weight="700" fill="#0f172a">Pipes: stdout of one command → stdin of the next</text>
+  <rect x="140" y="66" width="620" height="40" rx="8" fill="#0f172a"/>
+  <text x="450" y="92" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="17" fill="#ffffff">cat access.log | grep 500 | sort | uniq -c</text>
+
+  <g font-size="17" font-weight="700" text-anchor="middle">
+    <rect x="30" y="160" width="140" height="80" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="100" y="196" fill="#166534" font-family="Consolas, Menlo, monospace">cat</text>
+    <rect x="207" y="160" width="140" height="80" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="277" y="196" fill="#166534" font-family="Consolas, Menlo, monospace">grep 500</text>
+    <rect x="384" y="160" width="140" height="80" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="454" y="196" fill="#166534" font-family="Consolas, Menlo, monospace">sort</text>
+    <rect x="561" y="160" width="140" height="80" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="631" y="196" fill="#166534" font-family="Consolas, Menlo, monospace">uniq -c</text>
+    <rect x="738" y="160" width="140" height="80" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+    <text x="808" y="196" fill="#075985">Terminal</text>
+  </g>
+  <g font-size="13" fill="#14532d" text-anchor="middle">
+    <text x="100" y="220">reads the file</text>
+    <text x="277" y="220">keeps 500 lines</text>
+    <text x="454" y="220">groups duplicates</text>
+    <text x="631" y="220">counts each group</text>
+    <text x="808" y="220" fill="#0369a1">final stdout</text>
+  </g>
+
+  <g stroke="#475569" stroke-width="2" marker-end="url(#arrow)">
+    <line x1="172" y1="200" x2="201" y2="200"/>
+    <line x1="349" y1="200" x2="378" y2="200"/>
+    <line x1="526" y1="200" x2="555" y2="200"/>
+    <line x1="703" y1="200" x2="732" y2="200"/>
+  </g>
+  <g font-size="22" font-weight="700" fill="#16a34a" text-anchor="middle" font-family="Consolas, Menlo, monospace">
+    <text x="188" y="150">|</text>
+    <text x="365" y="150">|</text>
+    <text x="542" y="150">|</text>
+    <text x="719" y="150">|</text>
+  </g>
+  <g font-size="11" fill="#475569" text-anchor="middle">
+    <text x="188" y="258">stdout → stdin</text>
+    <text x="365" y="258">stdout → stdin</text>
+    <text x="542" y="258">stdout → stdin</text>
+    <text x="719" y="258">stdout → screen</text>
+  </g>
+
+  <rect x="30" y="280" width="848" height="100" rx="10" fill="#f8fafc" stroke="#94a3b8"/>
+  <g font-size="14" fill="#0f172a">
+    <text x="50" y="308" font-weight="700">How it works</text>
+    <text x="50" y="332">• The shell creates a pipe (a kernel buffer) between each pair of commands and starts them all at once.</text>
+    <text x="50" y="354">• Each pipe joins fd 1 (stdout) of the left command to fd 0 (stdin) of the right one.</text>
+    <text x="50" y="376">• stderr (fd 2) is not piped: errors still reach the terminal unless you add 2&gt;&amp;1 (or use |&amp; in bash).</text>
+  </g>
+</svg>

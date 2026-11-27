@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <rect width="900" height="420" fill="#ffffff"/>
+  <text x="450" y="40" text-anchor="middle" font-size="26" font-weight="700" fill="#0f172a">How sed Processes a File</text>
+
+  <!-- Input file -->
+  <rect x="30" y="90" width="160" height="150" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+  <text x="110" y="118" text-anchor="middle" font-size="17" font-weight="700" fill="#075985">Input file</text>
+  <g font-family="Consolas, Menlo, monospace" font-size="13" fill="#0f172a">
+    <text x="48" y="148">line 1</text>
+    <text x="48" y="172">line 2</text>
+    <text x="48" y="196">line 3</text>
+    <text x="48" y="220">...</text>
+  </g>
+
+  <!-- Pattern space -->
+  <rect x="240" y="110" width="180" height="110" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="330" y="145" text-anchor="middle" font-size="17" font-weight="700" fill="#166534">Pattern space</text>
+  <text x="330" y="170" text-anchor="middle" font-size="13" fill="#14532d">holds the current line</text>
+  <text x="330" y="192" text-anchor="middle" font-size="13" fill="#14532d">(newline removed)</text>
+
+  <!-- Commands -->
+  <rect x="470" y="110" width="180" height="110" rx="10" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <text x="560" y="145" text-anchor="middle" font-size="17" font-weight="700" fill="#854d0e">Apply commands</text>
+  <text x="560" y="170" text-anchor="middle" font-size="13" fill="#713f12">if address matches:</text>
+  <text x="560" y="192" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="13" fill="#713f12">s/// d p i a c</text>
+
+  <!-- Output -->
+  <rect x="700" y="110" width="170" height="110" rx="10" fill="#fce7f3" stroke="#db2777" stroke-width="2"/>
+  <text x="785" y="145" text-anchor="middle" font-size="17" font-weight="700" fill="#9d174d">Print</text>
+  <text x="785" y="170" text-anchor="middle" font-size="13" fill="#9d174d">pattern space to stdout</text>
+  <text x="785" y="192" text-anchor="middle" font-size="13" fill="#9d174d">(skipped with -n or d)</text>
+
+  <!-- Arrows -->
+  <line x1="192" y1="165" x2="236" y2="165" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="214" y="155" text-anchor="middle" font-size="12" fill="#475569">read</text>
+  <line x1="422" y1="165" x2="466" y2="165" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="652" y1="165" x2="696" y2="165" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Loop back -->
+  <path d="M785,222 L785,290 L330,290 L330,226" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arrow)"/>
+  <rect x="440" y="275" width="240" height="30" rx="6" fill="#ffffff"/>
+  <text x="560" y="296" text-anchor="middle" font-size="15" font-weight="600" fill="#16a34a">clear, read next line, repeat</text>
+
+  <!-- Footer -->
+  <rect x="30" y="335" width="840" height="60" rx="10" fill="#f8fafc" stroke="#94a3b8"/>
+  <text x="450" y="360" text-anchor="middle" font-size="14" fill="#0f172a">The original file is never changed unless you use -i. sed stops at end of input (or at q).</text>
+  <text x="450" y="382" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="13" fill="#475569">sed -n '/ERROR/p' app.log  &#8594;  only matching lines are printed</text>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="900" height="400" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="900" height="400" fill="#ffffff"/>
+  <text x="450" y="40" text-anchor="middle" font-size="26" font-weight="700" fill="#0f172a">How awk Splits a Record into Fields</text>
+
+  <!-- Record label -->
+  <text x="30" y="92" font-size="15" font-weight="600" fill="#475569">Record NR = 42  ($0 = the whole line, FS = whitespace)</text>
+  <rect x="30" y="102" width="840" height="44" rx="8" fill="#f8fafc" stroke="#94a3b8"/>
+  <text x="450" y="130" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="15" fill="#0f172a">192.168.1.20 - - [12/Mar/2026:10:15:32] "GET /api HTTP/1.1" 200 512</text>
+
+  <!-- Fields -->
+  <g font-family="Consolas, Menlo, monospace" font-size="14" text-anchor="middle">
+    <rect x="30" y="190" width="140" height="50" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="100" y="220" fill="#0f172a">192.168.1.20</text>
+    <rect x="180" y="190" width="40" height="50" rx="8" fill="#ffffff" stroke="#86efac"/>
+    <text x="200" y="220" fill="#0f172a">-</text>
+    <rect x="230" y="190" width="40" height="50" rx="8" fill="#ffffff" stroke="#86efac"/>
+    <text x="250" y="220" fill="#0f172a">-</text>
+    <rect x="280" y="190" width="190" height="50" rx="8" fill="#ffffff" stroke="#86efac"/>
+    <text x="375" y="220" fill="#0f172a">[12/Mar/2026:...]</text>
+    <rect x="480" y="190" width="70" height="50" rx="8" fill="#ffffff" stroke="#86efac"/>
+    <text x="515" y="220" fill="#0f172a">"GET</text>
+    <rect x="560" y="190" width="60" height="50" rx="8" fill="#ffffff" stroke="#86efac"/>
+    <text x="590" y="220" fill="#0f172a">/api</text>
+    <rect x="630" y="190" width="100" height="50" rx="8" fill="#ffffff" stroke="#86efac"/>
+    <text x="680" y="220" fill="#0f172a">HTTP/1.1"</text>
+    <rect x="740" y="190" width="55" height="50" rx="8" fill="#ffffff" stroke="#86efac"/>
+    <text x="767" y="220" fill="#0f172a">200</text>
+    <rect x="805" y="190" width="65" height="50" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="837" y="220" fill="#0f172a">512</text>
+  </g>
+
+  <!-- Field labels -->
+  <g font-size="15" font-weight="700" fill="#16a34a" text-anchor="middle">
+    <text x="100" y="268">$1</text>
+    <text x="200" y="268">$2</text>
+    <text x="250" y="268">$3</text>
+    <text x="375" y="268">$4</text>
+    <text x="515" y="268">$5</text>
+    <text x="590" y="268">$6</text>
+    <text x="680" y="268">$7</text>
+    <text x="767" y="268">$8</text>
+    <text x="837" y="268">$NF</text>
+    <text x="837" y="288" font-size="12" font-weight="400" fill="#475569">($9)</text>
+  </g>
+
+  <!-- Footer -->
+  <rect x="30" y="310" width="840" height="70" rx="10" fill="#f8fafc" stroke="#94a3b8"/>
+  <text x="450" y="337" text-anchor="middle" font-size="15" fill="#0f172a">NF = 9 fields in this record  ·  NR = 42 (line number)  ·  $NF = last field</text>
+  <text x="450" y="362" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="14" fill="#475569">awk '{print $1, $8}' access.log  &#8594;  192.168.1.20 200</text>
+</svg>
